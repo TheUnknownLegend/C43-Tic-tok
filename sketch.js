@@ -21,23 +21,21 @@ function setup() {
 
   angleMode(DEGREES);
 
-  
-
   tick.loop();
-
   music.loop();
+
 }
 
 function draw() {
 
   background(backgrounds);
-  fill("green");
-  text("The getaway clock", 150,20);
   
   let hr = hour();
   let mn = minute();
   let sc = second();
   
+  stroke("white");
+  fill("red");
   text("Time left to escape: "+(23-hr)+":"+(59-mn)+":"+(59-sc),100,380);
   
   translate(200,200);
@@ -57,7 +55,7 @@ function draw() {
 function seconds(){
   strokeWeight(8);
   let sc = second();
-    stroke("blue");
+    stroke("#6497A0");
     noFill();
     var sec = map(sc,0,60,0,360);
     arc(0,0,300,300,0,sec);
@@ -65,7 +63,7 @@ function seconds(){
     push();
     rotate(sec);
     strokeWeight(7);
-    stroke("blue");
+    stroke("#8A5EE1");
     line(0,0,100,0);
     pop();
 }
@@ -73,7 +71,7 @@ function seconds(){
 function minutes(){
   strokeWeight(8);
   let mn = minute();
-    stroke("yellow");
+    stroke("#e06514");
     noFill();
     var min = map(mn,0,60,0,360);
     arc(0,0,280,280,0,min);
@@ -81,7 +79,7 @@ function minutes(){
     push();
     rotate(min);
     strokeWeight(7);
-    stroke("yellow");
+    stroke("#19d691");
     line(0,0,75,0);
     pop();
 }
@@ -89,7 +87,7 @@ function minutes(){
 function hours(){
   strokeWeight(8);
   let hr = hour();
-    stroke("red");
+    stroke("orange");
     noFill();
     var h = map(hr%12,0,12,0,360);
     arc(0,0,260,260,0,h);
@@ -97,7 +95,7 @@ function hours(){
     push();
     rotate(h);
     strokeWeight(7);
-    stroke("red");
+    stroke("gold");
     line(0,0,50,0);
     pop();
 
